@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DDC4CCD81B40E504009D230F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCD71B40E504009D230F /* User.m */; };
+		DDC4CCDB1B40E670009D230F /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCDA1B40E670009D230F /* Media.m */; };
+		DDC4CCDE1B40E738009D230F /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCDD1B40E738009D230F /* Comment.m */; };
+		DDC4CCE11B40E7E8009D230F /* Datasource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCE01B40E7E8009D230F /* Datasource.m */; };
 		DDFDB87E1B40642C0022F3C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFDB87D1B40642C0022F3C2 /* main.m */; };
 		DDFDB8811B40642C0022F3C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFDB8801B40642C0022F3C2 /* AppDelegate.m */; };
 		DDFDB8891B40642C0022F3C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFDB8881B40642C0022F3C2 /* Images.xcassets */; };
@@ -36,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DDC4CCD61B40E504009D230F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../User.h; sourceTree = "<group>"; };
+		DDC4CCD71B40E504009D230F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = ../User.m; sourceTree = "<group>"; };
+		DDC4CCD91B40E670009D230F /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Media.h; path = ../Media.h; sourceTree = "<group>"; };
+		DDC4CCDA1B40E670009D230F /* Media.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Media.m; path = ../Media.m; sourceTree = "<group>"; };
+		DDC4CCDC1B40E738009D230F /* Comment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Comment.h; path = ../Comment.h; sourceTree = "<group>"; };
+		DDC4CCDD1B40E738009D230F /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Comment.m; path = ../Comment.m; sourceTree = "<group>"; };
+		DDC4CCDF1B40E7E8009D230F /* Datasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Datasource.h; path = ../Datasource.h; sourceTree = "<group>"; };
+		DDC4CCE01B40E7E8009D230F /* Datasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Datasource.m; path = ../Datasource.m; sourceTree = "<group>"; };
 		DDFDB8781B40642C0022F3C2 /* Blocstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFDB87C1B40642C0022F3C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDFDB87D1B40642C0022F3C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -104,6 +116,14 @@
 				DDFDB8801B40642C0022F3C2 /* AppDelegate.m */,
 				DDFDB8B61B4081040022F3C2 /* ImagesTableViewController.h */,
 				DDFDB8B71B4081040022F3C2 /* ImagesTableViewController.m */,
+				DDC4CCD61B40E504009D230F /* User.h */,
+				DDC4CCD71B40E504009D230F /* User.m */,
+				DDC4CCD91B40E670009D230F /* Media.h */,
+				DDC4CCDA1B40E670009D230F /* Media.m */,
+				DDC4CCDC1B40E738009D230F /* Comment.h */,
+				DDC4CCDD1B40E738009D230F /* Comment.m */,
+				DDC4CCDF1B40E7E8009D230F /* Datasource.h */,
+				DDC4CCE01B40E7E8009D230F /* Datasource.m */,
 				DDFDB8881B40642C0022F3C2 /* Images.xcassets */,
 				DDFDB88A1B40642C0022F3C2 /* LaunchScreen.xib */,
 				DDFDB87B1B40642C0022F3C2 /* Supporting Files */,
@@ -263,7 +283,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC4CCD81B40E504009D230F /* User.m in Sources */,
+				DDC4CCDE1B40E738009D230F /* Comment.m in Sources */,
+				DDC4CCDB1B40E670009D230F /* Media.m in Sources */,
 				DDFDB8811B40642C0022F3C2 /* AppDelegate.m in Sources */,
+				DDC4CCE11B40E7E8009D230F /* Datasource.m in Sources */,
 				DDFDB87E1B40642C0022F3C2 /* main.m in Sources */,
 				DDFDB8B81B4081040022F3C2 /* ImagesTableViewController.m in Sources */,
 			);
