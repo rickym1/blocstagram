@@ -42,8 +42,13 @@
 
 #pragma mark - Table view data source
 
+- (NSArray) tableView:(UITableView *)tableView sharedInstance:(NSIndexPath *)indexPath {
+    NSArray *items = [[NSMutableArray alloc] init];
+    return items;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [Datasource sharedInstance].mediaItems.count;
+    return [self items].count
 }
 
 
