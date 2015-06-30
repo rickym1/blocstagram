@@ -11,6 +11,7 @@
 		DDC4CCDB1B40E670009D230F /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCDA1B40E670009D230F /* Media.m */; };
 		DDC4CCDE1B40E738009D230F /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCDD1B40E738009D230F /* Comment.m */; };
 		DDC4CCE11B40E7E8009D230F /* Datasource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCE01B40E7E8009D230F /* Datasource.m */; };
+		DDC4CCE41B41FE2B009D230F /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCE31B41FE2B009D230F /* MediaTableViewCell.m */; };
 		DDFDB87E1B40642C0022F3C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFDB87D1B40642C0022F3C2 /* main.m */; };
 		DDFDB8811B40642C0022F3C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFDB8801B40642C0022F3C2 /* AppDelegate.m */; };
 		DDFDB8891B40642C0022F3C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFDB8881B40642C0022F3C2 /* Images.xcassets */; };
@@ -48,6 +49,8 @@
 		DDC4CCDD1B40E738009D230F /* Comment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Comment.m; path = ../Comment.m; sourceTree = "<group>"; };
 		DDC4CCDF1B40E7E8009D230F /* Datasource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Datasource.h; path = ../Datasource.h; sourceTree = "<group>"; };
 		DDC4CCE01B40E7E8009D230F /* Datasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Datasource.m; path = ../Datasource.m; sourceTree = "<group>"; };
+		DDC4CCE21B41FE2B009D230F /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MediaTableViewCell.h; path = ../MediaTableViewCell.h; sourceTree = "<group>"; };
+		DDC4CCE31B41FE2B009D230F /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MediaTableViewCell.m; path = ../MediaTableViewCell.m; sourceTree = "<group>"; };
 		DDFDB8781B40642C0022F3C2 /* Blocstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFDB87C1B40642C0022F3C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDFDB87D1B40642C0022F3C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -124,6 +127,8 @@
 				DDC4CCDD1B40E738009D230F /* Comment.m */,
 				DDC4CCDF1B40E7E8009D230F /* Datasource.h */,
 				DDC4CCE01B40E7E8009D230F /* Datasource.m */,
+				DDC4CCE21B41FE2B009D230F /* MediaTableViewCell.h */,
+				DDC4CCE31B41FE2B009D230F /* MediaTableViewCell.m */,
 				DDFDB8881B40642C0022F3C2 /* Images.xcassets */,
 				DDFDB88A1B40642C0022F3C2 /* LaunchScreen.xib */,
 				DDFDB87B1B40642C0022F3C2 /* Supporting Files */,
@@ -285,6 +290,7 @@
 			files = (
 				DDC4CCD81B40E504009D230F /* User.m in Sources */,
 				DDC4CCDE1B40E738009D230F /* Comment.m in Sources */,
+				DDC4CCE41B41FE2B009D230F /* MediaTableViewCell.m in Sources */,
 				DDC4CCDB1B40E670009D230F /* Media.m in Sources */,
 				DDFDB8811B40642C0022F3C2 /* AppDelegate.m in Sources */,
 				DDC4CCE11B40E7E8009D230F /* Datasource.m in Sources */,
