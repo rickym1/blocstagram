@@ -42,8 +42,13 @@
 
 #pragma mark - Table view data source
 
+- (NSInteger) items {
+    NSInteger items = [[NSInteger alloc] init];
+    return items;
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [Datasource sharedInstance].mediaItems.count;
+    return [self items].count
 }
 
 
