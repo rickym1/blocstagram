@@ -45,7 +45,7 @@ static NSParagraphStyle *paragraphStyle;
 }
 
 - (CGSize) sizeOfString:(NSAttributedString *)string {
-    CGSize maxSize = CGSizeMake(CGRectGetWidth(self.contentView.bounds), - 40, 0.0);
+    CGSize maxSize = CGSizeMake(CGRectGetWidth(self.contentView.bounds) - 40, 0.0);
     CGRect sizeRect = [string boundingRectWithSize:maxSize options:NSStringDrawingUsesLineFragmentOrigin context:nil];
     sizeRect.size.height += 20;
     sizeRect = CGRectIntegral(sizeRect);
@@ -123,7 +123,7 @@ static NSParagraphStyle *paragraphStyle;
         
         // Make an attributed string, with the "username" bold
         
-        NSMutableAttributedString *oneCommentString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName : lightFont, NSParagraphStyleAttributeName : paragraphStyle];
+        NSMutableAttributedString *oneCommentString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName : lightFont, NSParagraphStyleAttributeName : paragraphStyle}];
                                                                                                                                 
         NSRange usernameRange = [baseString rangeOfString:comment.from.userName];
                                                                                                                                 
@@ -143,6 +143,23 @@ static NSParagraphStyle *paragraphStyle;
     [super setSelected:selected animated:animated];
 
     // Configure the view for the selected state
+}
+
++ (CGFloat) heightForMediaItem:(Media *)mediaItem width:(CGFloat)width {
+    // Make a cell
+    MediaTableViewCell *layoutCell = [[MediaTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"layoutCell"];
+    
+    // Set it to the given width, and the maximum possible height
+    layoutCell.frame = CGRectMake(0, 0, width, CGFLOAT_MAX);
+    
+    // Give it the media item
+    layoutCell.mediaItem = mediaItem;
+    
+    // Make it adjust the image view and labels
+    [layoutCell layoutSubviews];
+    
+    // The height will be wherever the bottom of the comments label is
+    return CGRectGetMaxY(layoutCell.commentLabel.frame);
 }
 
 @end
