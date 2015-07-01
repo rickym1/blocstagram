@@ -42,8 +42,8 @@
 
 #pragma mark - Table view data source
 
-- (NSArray) tableView:(UITableView *)tableView sharedInstance:(NSIndexPath *)indexPath {
-    NSArray *items = [[NSMutableArray alloc] init];
+- (NSInteger) items {
+    NSInteger items = [[NSInteger alloc] init];
     return items;
 }
 
