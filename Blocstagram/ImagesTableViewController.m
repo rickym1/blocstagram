@@ -13,17 +13,22 @@
 #import "Comment.h"
 #import "MediaTableViewCell.h"
 
+
+
 @interface ImagesTableViewController ()
+
 
 @end
 
 @implementation ImagesTableViewController
 
+
+
 - (void)viewDidLoad {
     [super viewDidLoad];
    
     
-    [self.tableView registerClass:[MediaTableViewCell class] forCellReuseIdentifier:@"imageCell"];
+    [self.tableView registerClass:[MediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
     
 }
 
