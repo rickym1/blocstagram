@@ -43,7 +43,8 @@
 #pragma mark - Table view data source
 
 - (NSInteger) items {
-    NSInteger items = [[NSInteger alloc] init];
+    NSInteger items = [Datasource sharedInstance];
+    
     return items;
 }
 
