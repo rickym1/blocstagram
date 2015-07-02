@@ -26,6 +26,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    [[Datasource sharedInstance] addObserver:self forKeyPath:@"mediaItems" options:0 context:nil];
    
     
     [self.tableView registerClass:[MediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
@@ -65,5 +67,10 @@
     Media *item = [Datasource sharedInstance].mediaItems[indexPath.row];
     return [MediaTableViewCell heightForMediaItem:item width:CGRectGetWidth(self.view.frame)];
     
+}
+
+- (void) dealloc
+{
+    [[Datasource sharedInstance] removeObserver:self forKeyPath:@"mediaItems"];
 }
 @end
