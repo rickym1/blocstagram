@@ -42,14 +42,14 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger) items {
-    NSInteger items = [Datasource sharedInstance];
+- (NSArray *)items {
+    NSArray *items = [Datasource sharedInstance].mediaItems;
     
     return items;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return [self items].count
+    return [self items].count;
 }
 
 
@@ -80,7 +80,7 @@
  [cell.contentView addSubview:imageView];
  }
  
-     Media *item = [Datasource sharedInstance].mediaItems[indexPath.row];
+     Media *item = [self items][indexPath.row];
      imageView.image = item.image;
     
     return cell;
@@ -88,7 +88,7 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    Media *item = [Datasource sharedInstance].mediaItems[indexPath.row];
+    Media *item = [self items][indexPath.row];
     UIImage *image = item.image;
     
     return (CGRectGetWidth(self.view.frame) / image.size.width) * image.size.height;
