@@ -25,6 +25,7 @@ static UIColor *usernameLabelGray;
 static UIColor *commentLabelGray;
 static UIColor *linkColor;
 static NSParagraphStyle *paragraphStyle;
+static UIColor *commentColor;
 
 @implementation MediaTableViewCell
 
@@ -34,6 +35,7 @@ static NSParagraphStyle *paragraphStyle;
     usernameLabelGray = [UIColor colorWithRed:0.933 green:0.933 blue:0.933 alpha:1];
     commentLabelGray = [UIColor colorWithRed:0.898 green:0.898 blue:0.898 alpha:1];
     linkColor = [UIColor colorWithRed:0.345 green:0.314 blue:0.427 alpha:1];
+    commentColor = [UIColor colorWithRed:1.000 green:0.498 blue:0.286 alpha:1.0];
     
     NSMutableParagraphStyle *mutableParagraphStyle = [[NSMutableParagraphStyle alloc] init];
     mutableParagraphStyle.headIndent = 20.0;
@@ -87,8 +89,10 @@ static NSParagraphStyle *paragraphStyle;
     
     // #4
     NSRange usernameRange = [baseString rangeOfString:self.mediaItem.user.userName];
+    NSRange captionRange = [baseString rangeOfString:self.mediaItem.caption];
     [mutableUsernameAndCaptionString addAttribute:NSFontAttributeName value:[boldFont fontWithSize:usernameFontSize] range:usernameRange];
     [mutableUsernameAndCaptionString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
+    [mutableUsernameAndCaptionString addAttribute:NSKernAttributeName value:@5 range:captionRange];
     
     return mutableUsernameAndCaptionString;
 }
@@ -126,14 +130,25 @@ static NSParagraphStyle *paragraphStyle;
         NSMutableAttributedString *oneCommentString = [[NSMutableAttributedString alloc] initWithString:baseString attributes:@{NSFontAttributeName : lightFont, NSParagraphStyleAttributeName : paragraphStyle}];
                                                                                                                                 
         NSRange usernameRange = [baseString rangeOfString:comment.from.userName];
+        NSRange firstComment = [baseString rangeOfString:comment.from.firstComment];
                                                                                                                                 
         [oneCommentString addAttribute:NSFontAttributeName value:boldFont range:usernameRange];
-        [oneCommentString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
-                                                                                                                                
+        
+        if (self.mediaItem.comments % 1 == 0) {
+            [oneCommentString addAttribute:NSForegroundColorAttributeName value:commentColor range:firstComment];
+        } else {
+            [oneCommentString addAttribute:NSForegroundColorAttributeName value:linkColor range:usernameRange];
+
+        }
+
+        
+        
         [commentString appendAttributedString:oneCommentString];
-                                                                                                                                
+        
+        
     }
-                                                                                                                                
+    
+    
     return commentString;
                                                        
 }
