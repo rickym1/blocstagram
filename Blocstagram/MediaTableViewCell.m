@@ -134,7 +134,7 @@ static NSParagraphStyle *paragraphStyle;
     
     self.commentLabelHeightConstraint.identifier = @"Comment label height constraint";
     
-    [self.contentView addConstraints:@[self.imageHeightConstraint, self.usernameAndCaptionLabelHeightConstraint, self.commentLabelHeightConstraint]];
+    [self.contentView addConstraints:@[self.imageHeightConstraint, self.imageWidthConstraint, self.usernameAndCaptionLabelHeightConstraint, self.commentLabelHeightConstraint]];
     
     return self;
 }
