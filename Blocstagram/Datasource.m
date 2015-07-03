@@ -174,22 +174,26 @@
     }
 }
 
-- (void) infiniteScrollIfNecessary {
-    // #3
-    NSIndexPath *bottomIndexpath = [[self.tableView indexPathsForVisibleRows] lastObject];
-    
-    if (bottomIndexpath && bottomIndexpath.row == [Datasource sharedInstance].mediaItems.count - 1) {
-        // The very last cell is on screen
-        [[Datasource sharedInstance] requestOldItemsWithCompletionHandler:nil];
+- (void) requestOldItemsWithCompletionHandler:(NewItemcompletionBlock)completionHandler {
+    if (self.isLoadingOlderItems == NO) {
+        self.isLoadingOlderItems = YES;
+        Media *media = [[Media alloc] init];
+        media.user = [self randomUser];
+        media.image = [UIImage imageNamed:@"1.jpg"];
+        media.caption = [self randomSentence];
+        
+        NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
+        [mutableArrayWithKVO addObject:media];
+        
+        self.isLoadingOlderItems = NO;
+        
+        if (completionHandler) {
+            completionHandler(nil);
+        }
     }
 }
 
-# pragma mark - UIScrollViewDelegate
 
-// #4
-- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
-    [self infiniteScrollIfNecessary];
-}
 
 @end
 

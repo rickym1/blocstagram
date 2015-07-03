@@ -133,7 +133,22 @@
         [sender endRefreshing];
     }];
 }
+- (void) infiniteScrollIfNecessary {
+    // #3
+    NSIndexPath *bottomIndexpath = [[self.tableView indexPathsForVisibleRows] lastObject];
+    
+    if (bottomIndexpath && bottomIndexpath.row == [Datasource sharedInstance].mediaItems.count - 1) {
+        // The very last cell is on screen
+        [[Datasource sharedInstance] requestOldItemsWithCompletionHandler:nil];
+    }
+}
 
+# pragma mark - UIScrollViewDelegate
+
+// #4
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self infiniteScrollIfNecessary];
+}
 
 
 @end
