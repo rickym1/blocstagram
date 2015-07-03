@@ -121,8 +121,9 @@
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         // Delete the row from the data source
         Media *item = [Datasource sharedInstance].mediaItems[indexPath.row];
-        [[Datasource sharedInstance] cut:item];
-        [[Datasource sharedInstance] paste:item];
+        [[Datasource sharedInstance] deleteMediaItem:item];
+        [[Datasource sharedInstance] insertObject:item inMediaItemsAtIndex:0];
+   
     }
 }
 
