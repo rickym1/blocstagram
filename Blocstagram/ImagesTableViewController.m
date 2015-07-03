@@ -28,6 +28,9 @@
     [super viewDidLoad];
     
     [[Datasource sharedInstance] addObserver:self forKeyPath:@"mediaItems" options:0 context:nil];
+    
+    self.refreshControl = [[UIRefreshControl alloc] init];
+    [self.refreshControl addTarget:self action:@selector(refreshControlDidFire:) forControlEvents:UIControlEventValueChanged];
    
     
     [self.tableView registerClass:[MediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
@@ -123,6 +126,12 @@
         Media *item = [Datasource sharedInstance].mediaItems[indexPath.row];
         [[Datasource sharedInstance] deleteMediaItem:item];
     }
+}
+
+- (void) refreshControlDidFire:(UIRefreshControl *) sender {
+    [[Datasource sharedInstance] requestNewItemsWithCompletionHandler:^(NSError *error) {
+        [sender endRefreshing];
+    }];
 }
 
 

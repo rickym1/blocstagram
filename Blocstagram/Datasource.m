@@ -17,6 +17,9 @@
 
 @property (nonatomic, strong) NSArray *mediaItems;
 
+@property (nonatomic, assign) BOOL isRefreshing;
+@property (nonatomic, assign) BOOL isLoadingOlderItems;
+
 @end
 
 @implementation Datasource
@@ -148,6 +151,44 @@
 - (void) deleteMediaItem:(Media *)item {
     NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
     [mutableArrayWithKVO removeObject:item];
+}
+
+- (void) requestNewItemsWithCompletionHandler:(NewItemcompletionBlock)completionHandler {
+    // #1
+    if (self.isRefreshing == NO) {
+        self.isRefreshing = YES;
+        // # 2
+        Media *media = [[Media alloc] init];
+        media.user = [self randomUser];
+        media.image = [UIImage imageNamed:@"10.jpg"];
+        media.caption = [self randomSentence];
+        
+        NSMutableArray *mutableArrayWithKVO = [self mutableArrayValueForKey:@"mediaItems"];
+        [mutableArrayWithKVO insertObject:media atIndex:0];
+        
+        self.isRefreshing = NO;
+        
+        if (completionHandler) {
+            completionHandler(nil);
+        }
+    }
+}
+
+- (void) infiniteScrollIfNecessary {
+    // #3
+    NSIndexPath *bottomIndexpath = [[self.tableView indexPathsForVisibleRows] lastObject];
+    
+    if (bottomIndexpath && bottomIndexpath.row == [Datasource sharedInstance].mediaItems.count - 1) {
+        // The very last cell is on screen
+        [[Datasource sharedInstance] requestOldItemsWithCompletionHandler:nil];
+    }
+}
+
+# pragma mark - UIScrollViewDelegate
+
+// #4
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    [self infiniteScrollIfNecessary];
 }
 
 @end
