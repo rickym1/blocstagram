@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DD6ECF091B49951D00CEA9FC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6ECF081B49951D00CEA9FC /* LoginViewController.m */; };
 		DDC4CCD81B40E504009D230F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCD71B40E504009D230F /* User.m */; };
 		DDC4CCDB1B40E670009D230F /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCDA1B40E670009D230F /* Media.m */; };
 		DDC4CCDE1B40E738009D230F /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCDD1B40E738009D230F /* Comment.m */; };
@@ -41,6 +42,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DD6ECF071B49951D00CEA9FC /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginViewController.h; path = ../LoginViewController.h; sourceTree = "<group>"; };
+		DD6ECF081B49951D00CEA9FC /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = LoginViewController.m; path = ../LoginViewController.m; sourceTree = "<group>"; };
 		DDC4CCD61B40E504009D230F /* User.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = User.h; path = ../User.h; sourceTree = "<group>"; };
 		DDC4CCD71B40E504009D230F /* User.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = User.m; path = ../User.m; sourceTree = "<group>"; };
 		DDC4CCD91B40E670009D230F /* Media.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Media.h; path = ../Media.h; sourceTree = "<group>"; };
@@ -117,6 +120,8 @@
 				DDFDB8A11B40806E0022F3C2 /* Images */,
 				DDFDB87F1B40642C0022F3C2 /* AppDelegate.h */,
 				DDFDB8801B40642C0022F3C2 /* AppDelegate.m */,
+				DD6ECF071B49951D00CEA9FC /* LoginViewController.h */,
+				DD6ECF081B49951D00CEA9FC /* LoginViewController.m */,
 				DDFDB8B61B4081040022F3C2 /* ImagesTableViewController.h */,
 				DDFDB8B71B4081040022F3C2 /* ImagesTableViewController.m */,
 				DDC4CCD61B40E504009D230F /* User.h */,
@@ -293,6 +298,7 @@
 				DDC4CCE41B41FE2B009D230F /* MediaTableViewCell.m in Sources */,
 				DDC4CCDB1B40E670009D230F /* Media.m in Sources */,
 				DDFDB8811B40642C0022F3C2 /* AppDelegate.m in Sources */,
+				DD6ECF091B49951D00CEA9FC /* LoginViewController.m in Sources */,
 				DDC4CCE11B40E7E8009D230F /* Datasource.m in Sources */,
 				DDFDB87E1B40642C0022F3C2 /* main.m in Sources */,
 				DDFDB8B81B4081040022F3C2 /* ImagesTableViewController.m in Sources */,
