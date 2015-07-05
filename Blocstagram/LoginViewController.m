@@ -44,12 +44,12 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
     }
     
     UIBarButtonItem *backButton = [[UIBarButtonItem alloc] initWithTitle:@"Back" style:UIBarButtonItemStylePlain target:self action:@selector(Back)];
-    self.navigationItem.rightBarButtonItem = backButton;
+    self.navigationItem.leftBarButtonItem = backButton;
 }
 
 - (IBAction)Back
 {
-    [self dismissViewControllerAnimated:YES completion:nil];
+    [self.webView canGoBack];
 }
 
 - (void)didReceiveMemoryWarning {
