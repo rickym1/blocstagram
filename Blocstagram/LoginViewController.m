@@ -49,7 +49,7 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
 
 - (IBAction)Back
 {
-    [self.webView canGoBack];
+    [self.webView goBack];
 }
 
 - (void)didReceiveMemoryWarning {
