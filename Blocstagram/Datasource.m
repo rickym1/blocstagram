@@ -27,7 +27,7 @@
 @implementation Datasource
 
 + (NSString *) instagramClientID {
-    return  @"<6076f5fa071445649d70a2eaff8d2aec>";
+    return  @"6076f5fa071445649d70a2eaff8d2aec";
 }
 
 
