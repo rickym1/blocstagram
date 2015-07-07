@@ -34,7 +34,7 @@
    
     
     [self.tableView registerClass:[MediaTableViewCell class] forCellReuseIdentifier:@"mediaCell"];
-    
+    [[Datasource sharedInstance] requestNewItemsWithCompletionHandler:nil];
 }
 
 - (void)didReceiveMemoryWarning {
