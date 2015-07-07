@@ -14,6 +14,7 @@
 		DDC4CCDE1B40E738009D230F /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCDD1B40E738009D230F /* Comment.m */; };
 		DDC4CCE11B40E7E8009D230F /* Datasource.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCE01B40E7E8009D230F /* Datasource.m */; };
 		DDC4CCE41B41FE2B009D230F /* MediaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCE31B41FE2B009D230F /* MediaTableViewCell.m */; };
+		DDECFEAD1B4C35EC0047ACFA /* MediaFullScreenViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DDECFEAC1B4C35EC0047ACFA /* MediaFullScreenViewController.m */; };
 		DDFDB87E1B40642C0022F3C2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFDB87D1B40642C0022F3C2 /* main.m */; };
 		DDFDB8811B40642C0022F3C2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DDFDB8801B40642C0022F3C2 /* AppDelegate.m */; };
 		DDFDB8891B40642C0022F3C2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DDFDB8881B40642C0022F3C2 /* Images.xcassets */; };
@@ -56,6 +57,8 @@
 		DDC4CCE01B40E7E8009D230F /* Datasource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Datasource.m; path = ../Datasource.m; sourceTree = "<group>"; };
 		DDC4CCE21B41FE2B009D230F /* MediaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MediaTableViewCell.h; path = ../MediaTableViewCell.h; sourceTree = "<group>"; };
 		DDC4CCE31B41FE2B009D230F /* MediaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MediaTableViewCell.m; path = ../MediaTableViewCell.m; sourceTree = "<group>"; };
+		DDECFEAB1B4C35EC0047ACFA /* MediaFullScreenViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MediaFullScreenViewController.h; path = ../MediaFullScreenViewController.h; sourceTree = "<group>"; };
+		DDECFEAC1B4C35EC0047ACFA /* MediaFullScreenViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MediaFullScreenViewController.m; path = ../MediaFullScreenViewController.m; sourceTree = "<group>"; };
 		DDFDB8781B40642C0022F3C2 /* Blocstagram.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Blocstagram.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDFDB87C1B40642C0022F3C2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DDFDB87D1B40642C0022F3C2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -133,12 +136,12 @@
 			isa = PBXGroup;
 			children = (
 				DDFDB8A11B40806E0022F3C2 /* Images */,
-				DDFDB87F1B40642C0022F3C2 /* AppDelegate.h */,
-				DDFDB8801B40642C0022F3C2 /* AppDelegate.m */,
-				DD6ECF071B49951D00CEA9FC /* LoginViewController.h */,
-				DD6ECF081B49951D00CEA9FC /* LoginViewController.m */,
 				DDFDB8B61B4081040022F3C2 /* ImagesTableViewController.h */,
 				DDFDB8B71B4081040022F3C2 /* ImagesTableViewController.m */,
+				DDC4CCE21B41FE2B009D230F /* MediaTableViewCell.h */,
+				DDC4CCE31B41FE2B009D230F /* MediaTableViewCell.m */,
+				DDECFEAB1B4C35EC0047ACFA /* MediaFullScreenViewController.h */,
+				DDECFEAC1B4C35EC0047ACFA /* MediaFullScreenViewController.m */,
 				DDC4CCD61B40E504009D230F /* User.h */,
 				DDC4CCD71B40E504009D230F /* User.m */,
 				DDC4CCD91B40E670009D230F /* Media.h */,
@@ -147,8 +150,10 @@
 				DDC4CCDD1B40E738009D230F /* Comment.m */,
 				DDC4CCDF1B40E7E8009D230F /* Datasource.h */,
 				DDC4CCE01B40E7E8009D230F /* Datasource.m */,
-				DDC4CCE21B41FE2B009D230F /* MediaTableViewCell.h */,
-				DDC4CCE31B41FE2B009D230F /* MediaTableViewCell.m */,
+				DDFDB87F1B40642C0022F3C2 /* AppDelegate.h */,
+				DDFDB8801B40642C0022F3C2 /* AppDelegate.m */,
+				DD6ECF071B49951D00CEA9FC /* LoginViewController.h */,
+				DD6ECF081B49951D00CEA9FC /* LoginViewController.m */,
 				DDFDB8881B40642C0022F3C2 /* Images.xcassets */,
 				DDFDB88A1B40642C0022F3C2 /* LaunchScreen.xib */,
 				DDFDB87B1B40642C0022F3C2 /* Supporting Files */,
@@ -352,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDECFEAD1B4C35EC0047ACFA /* MediaFullScreenViewController.m in Sources */,
 				DDC4CCD81B40E504009D230F /* User.m in Sources */,
 				DDC4CCDE1B40E738009D230F /* Comment.m in Sources */,
 				DDC4CCE41B41FE2B009D230F /* MediaTableViewCell.m in Sources */,
