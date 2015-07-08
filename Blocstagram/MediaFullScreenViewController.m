@@ -8,6 +8,7 @@
 
 #import "MediaFullScreenViewController.h"
 #import "Media.h"
+#import "ShareUtilities.h"
 
 @interface MediaFullScreenViewController () <UIScrollViewDelegate>
 
@@ -57,9 +58,25 @@
     
     [self.scrollView addGestureRecognizer:self.tap];
     [self.scrollView addGestureRecognizer:self.doubleTap];
-
+    UIButton *shareButton = [UIButton buttonWithType:UIButtonTypeSystem];
+    [shareButton setTitle:@"Share" forState:UIControlStateNormal];
+    [shareButton sizeToFit];
+    shareButton.center = CGPointMake(300, 500);
+    
+    [shareButton addTarget:self action:@selector(buttonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:shareButton];
+   
+    
 }
 
+- (void)buttonPressed:(UIButton *)button {
+    UIActivityViewController *activityVC = [ShareUtilities shareMediaItem:self.media];
+    [self presentViewController:activityVC animated:YES completion:nil];
+    
+    
+
+}
 - (void) viewWillLayoutSubviews {
     [super viewWillLayoutSubviews];
     //#4
