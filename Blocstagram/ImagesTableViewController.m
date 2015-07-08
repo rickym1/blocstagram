@@ -153,6 +153,13 @@
     }
 }
 
+- (void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath {
+    Media *mediaItem = [Datasource sharedInstance].mediaItems[indexPath.row];
+    if (mediaItem.downloadState == MediaDownloadStateNeedsImage) {
+        [[Datasource sharedInstance] downloadImageForMediaItem:mediaItem];
+    }
+}
+
 # pragma mark - UIScrollViewDelegate
 
 // #4
