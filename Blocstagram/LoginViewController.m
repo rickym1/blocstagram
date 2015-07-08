@@ -20,7 +20,7 @@
 NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewControllerDidGetAccessTokenNotification";
 
 - (NSString *)redirectURI {
-    return @"http://bloc.io";
+    return @"http://bloc.io/";
 }
 
 - (void)viewDidLoad {
@@ -35,7 +35,7 @@ NSString *const LoginViewControllerDidGetAccessTokenNotification = @"LoginViewCo
     
     self.title = NSLocalizedString(@"Login", @"Login");
     
-    NSString *urlString = [NSString stringWithFormat:@"https://instagram.com/oauth/authorize/?client_id:%@&redirect_uri=%@&response_type=token", [Datasource instagramClientID], [self redirectURI]];
+    NSString *urlString = [NSString stringWithFormat:@"https://instagram.com/oauth/authorize/?client_id=%@&redirect_uri=%@&response_type=token", [Datasource instagramClientID], [self redirectURI]];
     NSURL *url = [NSURL URLWithString:urlString];
     
     if (url) {
