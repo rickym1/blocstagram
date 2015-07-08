@@ -69,7 +69,7 @@
                         [self didChangeValueForKey:@"mediaItems"];
                         // #1
                         for (Media* mediaItem in self.mediaItems) {
-                            [self dowloadImageForMediaItem:mediaItem];
+                            [self downloadImageForMediaItem:mediaItem];
                         }
                     } else {
                         [self populateDataWithParameters:nil completionHandler:nil];
@@ -204,7 +204,7 @@
         
         if (mediaItem) {
             [tmpMediaItems addObject:mediaItem];
-            [self dowloadImageForMediaItem:mediaItem];
+            [self downloadImageForMediaItem:mediaItem];
         }
     }
     
@@ -256,7 +256,7 @@
     }
 }
 
--(void) dowloadImageForMediaItem:(Media *)mediaItem {
+-(void) downloadImageForMediaItem:(Media *)mediaItem {
     if (mediaItem.mediaURL && !mediaItem.image) {
         [self.instagramOperationManager GET:mediaItem.mediaURL.absoluteString parameters:nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
             if ([responseObject isKindOfClass:[UIImage class]]) {

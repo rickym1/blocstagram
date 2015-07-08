@@ -10,6 +10,7 @@
 #import "Media.h"
 #import "Comment.h"
 #import "User.h"  
+#import "Datasource.h"
 
 @interface MediaTableViewCell () <UIGestureRecognizerDelegate>
 
@@ -217,7 +218,7 @@ static NSParagraphStyle *paragraphStyle;
 
 - (void) twoTap:(UITapGestureRecognizer *)sender {
     if (_mediaItem.mediaURL && !_mediaItem.image) {
-        [self.delegate cell: self didTapImageView:self.mediaImageView];
+        [[Datasource sharedInstance] downloadImageForMediaItem:_mediaItem];
     }
 }
 
