@@ -30,8 +30,8 @@
         [navVC setViewControllers:@[loginVC] animated:YES];
     
         [[NSNotificationCenter defaultCenter] addObserverForName:LoginViewControllerDidGetAccessTokenNotification object:nil queue:nil usingBlock:^(NSNotification *note) {
-        ImagesTableViewController *imagesVC = [[ImagesTableViewController alloc] init];
-        [navVC setViewControllers:@[imagesVC] animated:YES];
+            ImagesTableViewController *imagesVC = [[ImagesTableViewController alloc] init];
+            [navVC setViewControllers:@[imagesVC] animated:YES];
         
         
         }];

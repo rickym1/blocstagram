@@ -23,7 +23,7 @@
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
 @property (nonatomic, strong) UILongPressGestureRecognizer *longPressGestureRecognizer;
 
-@property (nonatomic, assign) LikeButton *likeButton;
+@property (nonatomic, strong) LikeButton *likeButton;
 
 @end
 
@@ -123,6 +123,10 @@ static NSParagraphStyle *paragraphStyle;
         self.commentLabel = [[UILabel alloc] init];
         self.commentLabel.numberOfLines = 0;
         self.commentLabel.backgroundColor = commentLabelGray;
+        
+        self.likeButton = [[LikeButton alloc] init];
+        [self.likeButton addTarget:self action:@selector(likePressed:) forControlEvents:UIControlEventTouchUpInside];
+        self.likeButton.backgroundColor = usernameLabelGray;
         
         
         for (UIView *view in @[self.mediaImageView, self.usernameAndCaptionLabel, self.commentLabel, self.likeButton]) {
