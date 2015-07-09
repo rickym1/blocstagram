@@ -213,6 +213,17 @@ static NSParagraphStyle *paragraphStyle;
     }
 }
 
+- (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
+    UILabel *label;
+    NSUInteger likesInteger = LikeStateLiked.count;
+    NSString *numberLikes = [NSString stringWithFormat:@"%ld of likes", likesInteger];
+    
+    label = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, 44, 44)];
+    label.text = numberLikes;
+    [self addSubview:label];
+}
+
+
 # pragma mark - Liking
 
 - (void) likePressed:(UIButton *)sender {

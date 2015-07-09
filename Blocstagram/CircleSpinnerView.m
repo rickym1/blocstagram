@@ -43,7 +43,7 @@
         
         CABasicAnimation *animation = [CABasicAnimation animationWithKeyPath:@"transform.rotation"];
         animation.fromValue = @0;
-        animation.toValue = @(M_PI*2);
+        animation.toValue = @(2/M_PI);
         animation.duration = animationDuration;
         animation.timingFunction = linearCurve;
         animation.removedOnCompletion = NO;
@@ -59,12 +59,12 @@
         animationGroup.timingFunction = linearCurve;
         
         CABasicAnimation *strokeStartAnimation = [CABasicAnimation animationWithKeyPath:@"strokeStart"];
-        strokeStartAnimation.fromValue = @0.015;
-        strokeStartAnimation.toValue = @0.515;
+        strokeStartAnimation.fromValue = @0.515;
+        strokeStartAnimation.toValue = @0.015;
         
         CABasicAnimation *strokeEndAnimation = [CABasicAnimation animationWithKeyPath:@"strokeEnd"];
-        strokeEndAnimation.fromValue = @0.485;
-        strokeEndAnimation.toValue = @0.0985;
+        strokeEndAnimation.fromValue = @0.985;
+        strokeEndAnimation.toValue = @0.0485;
         
         animationGroup.animations = @[strokeStartAnimation, strokeEndAnimation];
         [_circleLayer addAnimation:animationGroup forKey:@"progress"];
