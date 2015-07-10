@@ -127,6 +127,8 @@ static NSParagraphStyle *paragraphStyle;
         self.commentLabel.numberOfLines = 0;
         self.commentLabel.backgroundColor = commentLabelGray;
         
+        
+        
         self.commentView = [[ComposeCommentView alloc] init];
         self.commentView.delegate = self;
         

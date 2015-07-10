@@ -253,7 +253,7 @@
     }
 }
 
--(void) dowloadImageForMediaItem:(Media *)mediaItem {
+-(void) downloadImageForMediaItem:(Media *)mediaItem {
     if (mediaItem.mediaURL && !mediaItem.image) {
         mediaItem.downloadState = MediaDownloadStateDownloadInProgress;
         
