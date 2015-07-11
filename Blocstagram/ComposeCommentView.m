@@ -121,7 +121,7 @@
 
 - (void) animateWithDuration {
     [UIView animateWithDuration:1 delay:0 usingSpringWithDamping:0.5 initialSpringVelocity:1 options:0 animations:^{
-        primaryConstrain.constant = 0;
+        primaryConstraint.constant = 0;
         [self.view button];
     }completion:nil];
 }
