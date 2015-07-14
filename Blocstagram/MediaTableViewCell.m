@@ -221,7 +221,7 @@ static NSParagraphStyle *paragraphStyle;
 - (void) applicationDidFinishLaunching:(NSNotification *)aNotification {
     UILabel *label;
     NSUInteger likesInteger = self.mediaItem.likeCount;
-    NSString *numberLikes = [NSString stringWithFormat:@"%ld of likes", likesInteger];
+    NSString *numberLikes = [NSString stringWithFormat:@"%d of likes", likesInteger];
     
     label = [[UILabel alloc] initWithFrame:CGRectMake(50, 0, 44, 44)];
     label.text = numberLikes;
