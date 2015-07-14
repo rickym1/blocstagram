@@ -130,14 +130,16 @@
 }
 
 - (UIImage *) imageByScalingToSize:(CGSize)size andCroppingWithRect:(CGRect)rect {
-    UIImage *image = [[UIImage alloc] init];
     
-    image = [UIImage imageWithData:imageData scale:[UIScreen mainScreen].scale];
     
-    rect.size.width *= self.scale;
-    rect.size.height *= self.scale;
-    rect.origin.x *= self.scale;
-    rect.origin.y *= self.scale;
+    
+    UIImage *image = [self imageWithFixedOrientation];
+    image = [image imageResizedToMatchAspectRatioOfSize:size];
+    
+    
+    image = [image imageCroppedToRect:rect];
+    
+    return image;
 }
 
 
