@@ -15,6 +15,8 @@
 
 @property (nonatomic, strong) CropBox *cropBox;
 @property (nonatomic, assign) BOOL hasLoadedOnce;
+@property (nonatomic, strong) UIToolbar *topView;
+@property (nonatomic, strong) UIToolbar *bottomView;
 
 @end
 
@@ -49,6 +51,11 @@
     self.automaticallyAdjustsScrollViewInsets = NO;
     
     self.view.backgroundColor = [UIColor colorWithWhite:0.8 alpha:1];
+    
+    [self createViews];
+
+    
+
 }
 
 - (void)didReceiveMemoryWarning {
@@ -66,6 +73,8 @@
     
     CGSize size = self.view.frame.size;
     
+
+    
     self.cropBox.frame = cropRect;
     self.cropBox.center = CGPointMake(size.width / 2, size.height / 2);
     self.scrollView.frame = self.cropBox.frame;
@@ -77,6 +86,18 @@
         self.scrollView.zoomScale = self.scrollView.minimumZoomScale;
         self.hasLoadedOnce = YES;
     }
+}
+
+- (void) createviews {
+    UIColor *whiteBG = [UIColor colorWithWhite:1.0 alpha:.15];
+
+    self.topView = [UIToolbar new];
+    self.bottomView = [UIToolbar new];
+    self.topView.barTintColor = whiteBG;
+    self.bottomView.barTintColor = whiteBG;
+    self.topView.alpha = 0.5;
+    self.bottomView.alpha = 0.5;
+    
 }
 
 - (void) cropPressed:(UIBarButtonItem *)sender {
