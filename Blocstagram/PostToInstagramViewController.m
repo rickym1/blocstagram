@@ -7,6 +7,7 @@
 //
 
 #import "PostToInstagramViewController.h"
+#import "NotVanillaCollectionViewCell.h"
 
 @interface PostToInstagramViewController () <UICollectionViewDataSource, UICollectionViewDelegate, UIDocumentInteractionControllerDelegate>
 
@@ -78,7 +79,7 @@ static NSString * const reuseIdentifier = @"Cell";
         self.navigationItem.rightBarButtonItem = self.sendBarButton;
     }
     
-    [self.filterCollectionView registerClass:[UICollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
+    [self.filterCollectionView registerClass:[NotVanillaCollectionViewCell class] forCellWithReuseIdentifier:@"cell"];
     
     self.view.backgroundColor = [UIColor whiteColor];
     self.filterCollectionView.backgroundColor = [UIColor whiteColor];
@@ -120,41 +121,6 @@ static NSString * const reuseIdentifier = @"Cell";
 
 - (NSInteger) collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
     return self.filterImages.count;
-}
-
-- (UICollectionViewCell *) collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
-    UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    
-    static NSInteger imageViewTag = 1000;
-    static NSInteger labelTag = 1001;
-    
-    UIImageView *thumbnail = (UIImageView *)[cell.contentView viewWithTag:imageViewTag];
-    UILabel *label = (UILabel *)[cell.contentView viewWithTag:labelTag];
-    
-    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.filterCollectionView.collectionViewLayout;
-    CGFloat thumbnailEdgeSize = flowLayout.itemSize.width;
-    
-    if (!thumbnail) {
-        thumbnail = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, thumbnailEdgeSize, thumbnailEdgeSize)];
-        thumbnail.contentMode = UIViewContentModeScaleAspectFill;
-        thumbnail.tag = imageViewTag;
-        thumbnail.clipsToBounds = YES;
-        
-        [cell.contentView addSubview:thumbnail];
-    }
-    
-    if (!label) {
-        label = [[UILabel alloc] initWithFrame:CGRectMake(0, thumbnailEdgeSize, thumbnailEdgeSize, 20)];
-        label.tag = labelTag;
-        label.textAlignment = NSTextAlignmentCenter;
-        label.font = [UIFont fontWithName:@"HelveticaNeue-Medium" size:10];
-        [cell.contentView addSubview:label];
-    }
-    
-    thumbnail.image = self.filterImages[indexPath.row];
-    label.text = self.filterTitles[indexPath.row];
-    
-    return cell;
 }
 
 
@@ -212,6 +178,17 @@ static NSString * const reuseIdentifier = @"Cell";
             [noirFilter setValue:sourceCIImage forKey:kCIInputImageKey];
             [self addCIImageToCollectionView:noirFilter.outputImage withFilterTitle:NSLocalizedString(@"Noir", @"Noir Filter")];
             
+        }
+    }];
+    
+    // Invert filter
+    
+    [self.photoFilterOperationQueue addOperationWithBlock:^ {
+        CIFilter *invertFilter = [CIFilter filterWithName:@"CIColorInvert"];
+        
+        if (invertFilter) {
+            [invertFilter setValue:sourceCIImage forKey:kCIInputImageKey];
+            [self addCIImageToCollectionView:invertFilter.outputImage withFilterTitle:NSLocalizedString(@"Invert", @"Invert Filter")];
         }
     }];
     
@@ -279,6 +256,33 @@ static NSString * const reuseIdentifier = @"Cell";
             
             [self addCIImageToCollectionView:result withFilterTitle:NSLocalizedString(@"Drunk", @"Drunk Filter")];
         }
+    }];
+    
+    // Crackhead Filter
+    
+    [self.photoFilterOperationQueue addOperationWithBlock:^ {
+        
+   
+    CIFilter *colorFilter = [CIFilter filterWithName:@"CIEdges"];
+    CIFilter *polygonFilter = [CIFilter filterWithName:@"CICrystallize"];
+    
+    if (colorFilter) {
+        [colorFilter setValue:@1 forKey:kCIInputIntensityKey];
+        [colorFilter setValue:sourceCIImage forKey:kCIInputImageKey];
+        
+        CIImage *result = colorFilter.outputImage;
+        
+        if (polygonFilter) {
+            [polygonFilter setValue:result forKey:kCIInputImageKey];
+            
+            CIVector *polygonVector = [CIVector vectorWithString:@"[150 150]"];
+            [polygonFilter setValue:polygonVector forKey:kCIInputCenterKey];
+            
+            [polygonFilter setValue:@20 forKey:kCIInputRadiusKey];
+            result = polygonFilter.outputImage;
+        }
+        [self addCIImageToCollectionView:result withFilterTitle:NSLocalizedString(@"Crackhead", @"Crackhead Filter")];
+    }
     }];
     
     // Film filter
