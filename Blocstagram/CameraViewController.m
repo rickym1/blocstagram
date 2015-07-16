@@ -75,7 +75,7 @@
                 
                 // #6
                 NSError *error = nil;
-                AVCaptureDevice *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
+                AVCaptureDeviceInput *input = [AVCaptureDeviceInput deviceInputWithDevice:device error:&error];
                 if (!input) {
                     UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:error.localizedDescription message:error.localizedRecoverySuggestion preferredStyle:UIAlertControllerStyleAlert];
                     [alertVC addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK button") style:UIAlertActionStyleCancel handler:^(UIAlertAction *action) {
@@ -164,7 +164,7 @@
 - (void) addViewsToViewHierarchy {
     NSMutableArray *views = [@[self.imagePreview, self.cropBox, self.topView, self.bottomView] mutableCopy];
     
-    [views addObjectsFromArray:self.cameraToolbar];
+    [views addObject:self.cameraToolbar];
     
     for (UIView *view in views) {
         [self.view addSubview:view];
