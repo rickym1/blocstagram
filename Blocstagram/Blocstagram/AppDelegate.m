@@ -13,6 +13,8 @@
 
 @interface AppDelegate ()
 
+@property (nonatomic, strong) UITapGestureRecognizer *tap;
+
 @end
 
 @implementation AppDelegate
@@ -44,7 +46,16 @@
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
+    
+    self.tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tapFired:)];
+    
+    [self.window addGestureRecognizer:self.tap];
+    
     return YES;
+}
+
+- (void) tapFired:(UITapGestureRecognizer *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
