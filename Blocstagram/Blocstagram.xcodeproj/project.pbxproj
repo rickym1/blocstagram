@@ -20,6 +20,7 @@
 		DD54ECA41B56D37800B6B6ED /* PostToInstagramViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD54ECA31B56D37800B6B6ED /* PostToInstagramViewController.m */; };
 		DD54ECA91B59219700B6B6ED /* UserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD54ECA81B59219700B6B6ED /* UserTests.m */; };
 		DD6ECF091B49951D00CEA9FC /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DD6ECF081B49951D00CEA9FC /* LoginViewController.m */; };
+		DD72F0F01B5946040020D610 /* 5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = DDFDB8A61B4080B90022F3C2 /* 5.jpg */; };
 		DDC4CCD81B40E504009D230F /* User.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCD71B40E504009D230F /* User.m */; };
 		DDC4CCDB1B40E670009D230F /* Media.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCDA1B40E670009D230F /* Media.m */; };
 		DDC4CCDE1B40E738009D230F /* Comment.m in Sources */ = {isa = PBXBuildFile; fileRef = DDC4CCDD1B40E738009D230F /* Comment.m */; };
@@ -367,6 +368,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD72F0F01B5946040020D610 /* 5.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

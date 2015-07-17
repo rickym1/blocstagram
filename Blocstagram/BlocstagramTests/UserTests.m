@@ -11,6 +11,7 @@
 #import "User.h"
 #import "Media.h"
 #import "ComposeCommentView.h"
+#import "MediaTableViewCell.h"
 
 @interface UserTests : XCTestCase
 
@@ -49,23 +50,28 @@
 - (void)testMediaInitialization
 {
     NSDictionary *sourceDictionary = @{@"id" : @"8675309",
-                                       @"media_url" : @"http://www.example.com/example.jpg"};
+                                       @"images" : @{@"standard_resolution" : @{@"url" : @"http://www.example.com/example.jpg"}}};
     
     Media *testMedia = [[Media alloc] initWithDictionary:sourceDictionary];
     
     XCTAssertEqualObjects(testMedia.idNumber, sourceDictionary[@"id"], @"The ID number should be equal");
-    XCTAssertEqualObjects(testMedia.mediaURL, [NSURL URLWithString:sourceDictionary[@"media_url"]], @"The media url should be equal");
-
+    XCTAssertEqualObjects(testMedia.mediaURL, [NSURL URLWithString:sourceDictionary[@"images"][@"standard_resolution"][@"url"]], @"The media url should be equal");
+    
     
 }
+
 
 - (void)testsIsWriting
 {
     NSString *yeah = @"yeah";
-    BOOL setText = [self.something setText:yeah];
-    XCTAssertTrue( setText == YES, "Comment is set to YES.");
+    [self.something setText:yeah];
+    XCTAssertTrue( self.something.isWritingComment == YES, "Comment is set to YES");
+    
+    [self.something setText:nil];
+    XCTAssertTrue(self.something.isWritingComment == NO, "Comment is set to NO");
     
 }
+
 
 
 @end
