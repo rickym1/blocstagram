@@ -390,6 +390,11 @@ static NSString * const reuseIdentifier = @"Cell";
     if (!success) {
         UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Couldn't save image", nil) message:NSLocalizedString(@"Your cropped and filtered photo couldn't be saved. Make sure you have enough disk space and try again.", nil) preferredStyle:UIAlertControllerStyleAlert];
         [alertVC addAction:[UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK button") style:UIAlertActionStyleCancel handler:nil]];
+        
+        alertVC.modalPresentationStyle = UIModalPresentationPopover;
+        UIPopoverPresentationController *popoverController = alertVC.popoverPresentationController;
+        popoverController = caption;
+        
         [self presentViewController:alertVC animated:YES completion:nil];
         return;
     }
