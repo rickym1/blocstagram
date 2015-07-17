@@ -9,6 +9,8 @@
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
 #import "User.h"
+#import "Media.h"
+#import "ComposeCommentView.h"
 
 @interface UserTests : XCTestCase
 
@@ -41,6 +43,19 @@
 }
 
 - (void)testMediaInitialization
+{
+    NSDictionary *sourceDictionary = @{@"id" : @"8675309",
+                                       @"media_url" : @"http://www.example.com/example.jpg"};
+    
+    Media *testMedia = [[Media alloc] initWithDictionary:sourceDictionary];
+    
+    XCTAssertEqualObjects(testMedia.idNumber, sourceDictionary[@"id"], @"The ID number should be equal");
+    XCTAssertEqualObjects(testMedia.mediaURL, [NSURL URLWithString:sourceDictionary[@"media_url"]], @"The media url should be equal");
+
+    
+}
+
+- (
 
 
 @end
