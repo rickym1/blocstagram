@@ -40,7 +40,6 @@
     XCTAssertEqualObjects(testUser.profilePictureURL, [NSURL URLWithString:sourceDictionary[@"profile_picture"]], @"The profile picture should be equal");
 }
 
-- (void)testMediaInitialization
 
 
 @end
