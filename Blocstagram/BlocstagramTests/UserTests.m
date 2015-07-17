@@ -14,6 +14,8 @@
 
 @interface UserTests : XCTestCase
 
+@property (nonatomic, strong) ComposeCommentView *something;
+
 @end
 
 @implementation UserTests
@@ -21,6 +23,8 @@
 - (void)setUp {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    
+    self.something = [[ComposeCommentView alloc] init];
 }
 
 - (void)tearDown {
@@ -55,7 +59,13 @@
     
 }
 
-- (
+- (void)testsIsWriting
+{
+    NSString *yeah = @"yeah";
+    BOOL setText = [self.something setText:yeah];
+    XCTAssertTrue( setText == YES, "Comment is set to YES.");
+    
+}
 
 
 @end
