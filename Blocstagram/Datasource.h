@@ -19,6 +19,8 @@ typedef void (^NewItemcompletionBlock)(NSError *error);
 @property (nonatomic, strong, readonly) NSString *accessToken;
 
 - (void) deleteMediaItem:(Media *)item;
+- (void) insertObject:(Media *)object inMediaItemsAtIndex:(NSUInteger)index;
+
 
 - (void) requestNewItemsWithCompletionHandler:(NewItemcompletionBlock)completionHandler;
 - (void) requestOldItemsWithCompletionHandler:(NewItemcompletionBlock)completionHandler;
